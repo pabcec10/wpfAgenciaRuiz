@@ -1,0 +1,24 @@
+﻿<Window x:Name="frmParmEstadoCiv" x:Class="WpfAppAgencia.frmParamEstCivil"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Parámetros: Estado Civil" Height="332.706" Width="643.985" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ComboBox x:Name="cboEstadoCivil" HorizontalAlignment="Left" Height="28" Margin="211,38,0,0" VerticalAlignment="Top" Width="230" SelectionChanged="cboEstadoCivil_SelectionChanged" FontWeight="Bold" >
+
+        </ComboBox>
+        <Label x:Name="lblEstCivil" Content="Estado Civil" HorizontalAlignment="Left" Height="25" Margin="104,41,0,0" VerticalAlignment="Top" Width="81" RenderTransformOrigin="-0.492,0.12" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+        <Button x:Name="btnAlta" Content="Alta" HorizontalAlignment="Left" Height="36" Margin="25,235,0,0" VerticalAlignment="Top" Width="84" Click="btnAlta_Click" FontWeight="Bold"/>
+        <Button x:Name="btnBaja" Content="Baja" HorizontalAlignment="Left" Height="36" Margin="140,235,0,0" VerticalAlignment="Top" Width="84" Click="btnBaja_Click" FontWeight="Bold"/>
+        <Button x:Name="btnModifica" Content="Modifica" HorizontalAlignment="Left" Height="36" Margin="261,235,0,0" VerticalAlignment="Top" Width="84" Click="btnModifica_Click" FontWeight="Bold"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Height="36" Margin="523,235,0,0" VerticalAlignment="Top" Width="84" Click="btnSalir_Click" FontWeight="Bold"/>
+        <Grid x:Name="gridEstCivil" HorizontalAlignment="Left" Height="124" Margin="38,89,0,0" VerticalAlignment="Top" Width="569" Background="#FFB7D2DE">
+            <Label x:Name="lblCodigo" Content="Código" HorizontalAlignment="Left" Height="27" Margin="64,2,0,0" VerticalAlignment="Top" Width="69" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+            <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="27" Margin="138,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77" IsReadOnly="True" FontWeight="Bold"/>
+            <Label x:Name="lblDescEstCivil" Content="Descripción *" HorizontalAlignment="Left" Height="27" Margin="43,48,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+            <TextBox x:Name="txtEstCivil" HorizontalAlignment="Left" Height="27" Margin="137,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" KeyDown="txtEstCivil_KeyDown" CharacterCasing="Upper" FontWeight="Bold"/>
+        </Grid>
+        <Button x:Name="btnGrabar" Content="Graba" HorizontalAlignment="Left" Height="36" Margin="313,235,0,0" VerticalAlignment="Top" Width="84" Click="btnGrabar_Click" FontWeight="Bold"/>
+        <Button x:Name="btnCancelar" Content="Cancela" HorizontalAlignment="Left" Height="36" Margin="434,235,0,0" VerticalAlignment="Top" Width="84" Click="btnCancelar_Click" FontWeight="Bold"/>
+
+    </Grid>
+</Window>

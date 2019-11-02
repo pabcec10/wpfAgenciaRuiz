@@ -1,0 +1,24 @@
+﻿<Window x:Name="frmMenuPrincipal" x:Class="WpfAppAgencia.frmMenuPpal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppAgencia"
+        mc:Ignorable="d"
+        Title="frmMenuPpal" Height="300" Width="699.6" WindowStartupLocation="CenterScreen" WindowState="Maximized" FontWeight="Bold" ResizeMode="NoResize">
+    <Grid Background="#2E86C1">
+        <DockPanel x:Name="dockPanelMenu" HorizontalAlignment="Stretch" Height="31" Margin="0" VerticalAlignment="Top" Width="auto" LastChildFill="False">
+            <Menu x:Name="mnMenuPpal" Height="23" Width="Auto" DockPanel.Dock="Top" VerticalAlignment="Top">
+                <MenuItem Header="Archivo" >
+                    <MenuItem Header="Salir" Click="MenuItem_Click_1" />
+                </MenuItem>
+                <MenuItem Header="Parámetros" >
+                    <MenuItem Header="Estado Civil" Click="MenuItem_Click_2" />
+                    <MenuItem Header="Feriados" Click="MenuItem_Click_3" />
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="61" Margin="206,106,0,0" VerticalAlignment="Top" Width="163" Click="button_Click"/>
+
+    </Grid>
+</Window>
