@@ -15,6 +15,7 @@
                 <MenuItem Header="Parámetros" >
                     <MenuItem Header="Estado Civil" Click="MenuItem_Click_2" />
                     <MenuItem Header="Feriados" Click="MenuItem_Click_3" />
+                    <MenuItem Header="Marcas" Click="MenuItem_Click_4" />
                 </MenuItem>
             </Menu>
         </DockPanel>
