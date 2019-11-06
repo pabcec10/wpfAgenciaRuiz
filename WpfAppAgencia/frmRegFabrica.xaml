@@ -1,0 +1,26 @@
+﻿<Window x:Name="frmRegFabricas" x:Class="WpfAppAgencia.frmRegFabrica"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppAgencia"
+        mc:Ignorable="d"
+        Title="Fábricas" Height="346" Width="692" FontWeight="Bold" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <ComboBox x:Name="cboFabrica" HorizontalAlignment="Left" Height="28" Margin="207,31,0,0" VerticalAlignment="Top" Width="230" FontWeight="Bold" SelectionChanged="cboFabrica_SelectionChanged" />
+        <Label x:Name="lblFabrica" Content="Fabricas" HorizontalAlignment="Left" Height="25" Margin="100,34,0,0" VerticalAlignment="Top" Width="81" RenderTransformOrigin="-0.492,0.12" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+        <Button x:Name="btnAlta" Content="Alta" HorizontalAlignment="Left" Height="36" Margin="45,233,0,0" VerticalAlignment="Top" Width="84" FontWeight="Bold" Click="btnAlta_Click"/>
+        <Button x:Name="btnBaja" Content="Baja" HorizontalAlignment="Left" Height="36" Margin="160,233,0,0" VerticalAlignment="Top" Width="84" FontWeight="Bold" Click="btnBaja_Click"/>
+        <Button x:Name="btnModifica" Content="Modifica" HorizontalAlignment="Left" Height="36" Margin="281,233,0,0" VerticalAlignment="Top" Width="84" FontWeight="Bold" Click="btnModifica_Click"/>
+        <Button x:Name="btnSalir" Content="Salir" HorizontalAlignment="Left" Height="36" Margin="543,233,0,0" VerticalAlignment="Top" Width="84" FontWeight="Bold" Click="btnSalir_Click"/>
+        <Grid x:Name="gridFabrica" HorizontalAlignment="Left" Height="124" Margin="58,87,0,0" VerticalAlignment="Top" Width="569" Background="#FFB7D2DE">
+            <Label x:Name="lblCodigo" Content="Código" HorizontalAlignment="Left" Height="27" Margin="64,8,0,0" VerticalAlignment="Top" Width="69" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+            <TextBox x:Name="txtCodigo" HorizontalAlignment="Left" Height="27" Margin="138,8,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="77" IsReadOnly="True" FontWeight="Bold"/>
+            <Label x:Name="lblDescEstCivil" Content="Descripción *" HorizontalAlignment="Left" Height="27" Margin="43,59,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+            <TextBox x:Name="txtFabrica" HorizontalAlignment="Left" Height="27" Margin="137,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" CharacterCasing="Upper" FontWeight="Bold"/>
+        </Grid>
+        <Button x:Name="btnGrabar" Content="Graba" HorizontalAlignment="Left" Height="36" Margin="333,233,0,0" VerticalAlignment="Top" Width="84" FontWeight="Bold" Click="btnGrabar_Click"/>
+        <Button x:Name="btnCancelar" Content="Cancela" HorizontalAlignment="Left" Height="36" Margin="454,233,0,0" VerticalAlignment="Top" Width="84" FontWeight="Bold" Click="btnCancelar_Click"/>
+
+    </Grid>
+</Window>

@@ -1,7 +1,7 @@
 ﻿<Window x:Name="frmParmEstadoCiv" x:Class="WpfAppAgencia.frmParamEstCivil"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Parámetros: Estado Civil" Height="332.706" Width="643.985" ResizeMode="CanResizeWithGrip" WindowStartupLocation="CenterScreen">
+        Title="Parámetros: Estado Civil" Height="332.706" Width="643.985" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <ComboBox x:Name="cboEstadoCivil" HorizontalAlignment="Left" Height="28" Margin="211,38,0,0" VerticalAlignment="Top" Width="230" SelectionChanged="cboEstadoCivil_SelectionChanged" FontWeight="Bold" >
 

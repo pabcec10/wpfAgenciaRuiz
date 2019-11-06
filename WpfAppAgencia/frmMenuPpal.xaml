@@ -16,10 +16,11 @@
                     <MenuItem Header="Estado Civil" Click="MenuItem_Click_2" />
                     <MenuItem Header="Feriados" Click="MenuItem_Click_3" />
                     <MenuItem Header="Marcas" Click="MenuItem_Click_4" />
+                    <MenuItem Header="Fábricas" Click="MenuItem_Click_5" />
                 </MenuItem>
             </Menu>
         </DockPanel>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="61" Margin="206,106,0,0" VerticalAlignment="Top" Width="163" Click="button_Click"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="61" Margin="478,52,0,0" VerticalAlignment="Top" Width="163" Click="button_Click"/>
 
     </Grid>
 </Window>

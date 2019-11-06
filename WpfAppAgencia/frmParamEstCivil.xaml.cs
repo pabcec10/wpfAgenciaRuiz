@@ -168,13 +168,7 @@ namespace WpfAppAgencia
 
                     conn.Close();
 
-                    this.cboEstadoCivil.IsEnabled = true;
-                    this.limpFormEStCiv();
-                    this.cboEstadoCivil.Text = string.Empty;
-                    this.muestraBotones();
-                    this.cargaCboEstCiv();
-                    this.gridEstCivil.IsEnabled = false;
-                    this.cboEstadoCivil.Focus();
+                    btnCancelar_Click(null, null);
                 }
                 else
                 {

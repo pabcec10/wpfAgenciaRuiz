@@ -25,20 +25,17 @@ using System.Text.RegularExpressions;
 namespace WpfAppAgencia
 {
     /// <summary>
-    /// Lógica de interacción para frmParamMarcas.xaml
+    /// Lógica de interacción para frmRegFabrica.xaml
     /// </summary>
-    public partial class frmParamMarcas : Window
+    public partial class frmRegFabrica : Window
     {
         int IdFab = 0;
-        int IdMarc = 0;
         char Acc = 'Z';
-        public frmParamMarcas()
+        public frmRegFabrica()
         {
             InitializeComponent();
             cargaCboFabrica();
             muestraBotones();
-            gridMarca.IsEnabled=false;
-            cargaCboMarca(0);
         }
         private DataSet getData(string strSQL, string strDA)
         {
@@ -59,15 +56,6 @@ namespace WpfAppAgencia
             cboFabrica.DisplayMemberPath = "Fabrica";
             cboFabrica.SelectedValue = "IdFabrica";
         }
-        private void cargaCboMarca(int xIdFab)
-        {
-            cboMarca.ItemsSource = null;
-            DataSet ds = getData("Select * From Marca Where IdFabrica="+ xIdFab +" Order By Marca", "Marca");
-            DataTable dt = ds.Tables[0];
-            cboMarca.ItemsSource = ((IListSource)dt).GetList();
-            cboMarca.DisplayMemberPath = "Marca";
-            cboMarca.SelectedValue = "IdMarca";
-        }
         private void ocultaBotones()
         {
             btnAlta.Visibility = Visibility.Hidden;
@@ -86,34 +74,26 @@ namespace WpfAppAgencia
             btnCancelar.Visibility = Visibility.Hidden;
             btnGrabar.Visibility = Visibility.Hidden;
         }
+        private void LimpForm()
+        {
+            txtFabrica.Text = string.Empty;
+        }
+        private void CargaFabrica(int param)
+        {
+            DataSet ds = getData("Select * From Fabrica Where IdFabrica=" + param, "Fabrica");
+            DataTable dt = ds.Tables[0];
+            txtCodigo.Text = dt.Rows[0]["IdFabrica"].ToString();
+            txtFabrica.Text = dt.Rows[0]["Fabrica"].ToString().ToUpper().Trim();
+        }
         private void cboFabrica_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cboFabrica.SelectedItem != null)
             {
                 IdFab = Convert.ToInt32(((DataRowView)cboFabrica.SelectedItem)["IdFabrica"]);
-                cargaCboMarca(IdFab);
+                CargaFabrica(IdFab);
             }
         }
-        private void CargaMarca(int param)
-        {
-            DataSet ds = getData("Select * From Marca Where IdMarca=" + param, "Marca");
-            DataTable dt = ds.Tables[0];
-            txtCodigo.Text = dt.Rows[0]["IdMarca"].ToString();
-            txtMarca.Text = dt.Rows[0]["Marca"].ToString().ToUpper().Trim();
-        }
-        private void cboMarca_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (cboMarca.SelectedItem != null)
-            {
-                IdMarc = Convert.ToInt32(((DataRowView)cboMarca.SelectedItem)["IdMarca"]);
-                CargaMarca(IdMarc);
-            }
-        }
-        private void LimpForm()
-        {
-            txtCodigo.Text = string.Empty;
-            txtMarca.Text = string.Empty;
-        }
+
         private void btnSalir_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -121,72 +101,68 @@ namespace WpfAppAgencia
 
         private void btnAlta_Click(object sender, RoutedEventArgs e)
         {
-            if (cboFabrica.Text!=string.Empty)
-            {
-                Acc = 'A';
-                cboFabrica.IsEnabled = false;
-                cboMarca.Text = string.Empty;
-                cboMarca.IsEnabled = false;
-                LimpForm();
-                gridMarca.IsEnabled = true;
-                ocultaBotones();
-                txtMarca.Focus();
-            }
-            else
-            {
-                MessageBox.Show("Debe Seleccionar una Fábrica para dar de Alta a una Marca", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            Acc = 'A';
+            cboFabrica.Text = string.Empty;
+            cboFabrica.IsEnabled = false;
+            LimpForm();
+            ocultaBotones();
+            gridFabrica.IsEnabled = true;
+            txtFabrica.Focus();
         }
 
         private void btnBaja_Click(object sender, RoutedEventArgs e)
         {
-            if (cboMarca.Text != string.Empty)
+            if (cboFabrica.Text != string.Empty)
             {
                 Acc = 'B';
                 cboFabrica.IsEnabled = false;
-                cboMarca.IsEnabled = false;
                 ocultaBotones();
+                gridFabrica.IsEnabled = false;
                 btnGrabar.Focus();
             }
             else
-            {
-                MessageBox.Show("Debe Seleccionar una Marca para dar de Baja", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+                MessageBox.Show("Debe Elegir Una Fábrica Para Borrar", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
+
         }
 
         private void btnModifica_Click(object sender, RoutedEventArgs e)
         {
-            if (cboMarca.Text != string.Empty)
+            if (cboFabrica.Text != string.Empty)
             {
                 Acc = 'M';
                 cboFabrica.IsEnabled = false;
-                cboMarca.IsEnabled = false;
-                gridMarca.IsEnabled = true;
                 ocultaBotones();
-                txtMarca.Focus();
+                gridFabrica.IsEnabled = true;
+                txtFabrica.Focus();
             }
             else
-            {
-                MessageBox.Show("Debe Seleccionar una Marca para Modificar", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+                MessageBox.Show("Debe Elegir Una Fábrica Para Modificar", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
+
         }
-        private void grabaMarca()
+
+        private void btnCancelar_Click(object sender, RoutedEventArgs e)
+        {
+            cboFabrica.Text = string.Empty;
+            cboFabrica.IsEnabled = true;
+            gridFabrica.IsEnabled = false;
+            LimpForm();
+            muestraBotones();
+            cboFabrica.Focus();
+        }
+        private void cargaFabricas()
         {
             string CadenaStr1 = ConfigurationManager.ConnectionStrings["CadConexion"].ConnectionString; //Obtiene la Cadena de Conexion de app.config
             SqlConnection conn = new SqlConnection(CadenaStr1);
             SqlCommand cmd = new SqlCommand();
 
-            cmd.CommandText = "sp_ABM_Marca";
+            cmd.CommandText = "sp_ABM_Fabricas";
             cmd.CommandType = CommandType.StoredProcedure;
-
-            cmd.Parameters.Add("@xIdMarca", SqlDbType.Int);
-            cmd.Parameters["@xIdMarca"].Value = IdMarc;
 
             cmd.Parameters.Add("@xIdFabrica", SqlDbType.Int);
             cmd.Parameters["@xIdFabrica"].Value = IdFab;
 
-            cmd.Parameters.Add("@xMarca", SqlDbType.VarChar);
-            cmd.Parameters["@xMarca"].Value = txtMarca.Text.Trim();
+            cmd.Parameters.Add("@xFabrica", SqlDbType.VarChar);
+            cmd.Parameters["@xFabrica"].Value = txtFabrica.Text.Trim();
 
             cmd.Parameters.Add("@xAcc", SqlDbType.VarChar);
             cmd.Parameters["@xAcc"].Value = Acc;
@@ -203,22 +179,7 @@ namespace WpfAppAgencia
         }
         private void btnGrabar_Click(object sender, RoutedEventArgs e)
         {
-            if (txtMarca.Text != string.Empty)
-                grabaMarca();
-            else
-                MessageBox.Show("Faltan datos para Grabar la Marca", "Mensaje", MessageBoxButton.OK, MessageBoxImage.Error);
-        }
-
-        private void btnCancelar_Click(object sender, RoutedEventArgs e)
-        {
-            LimpForm();
-            muestraBotones();
-            cargaCboMarca(IdFab);
-            gridMarca.IsEnabled = false;
-            cboMarca.Text = string.Empty;
-            cboFabrica.IsEnabled = true;
-            cboMarca.IsEnabled = true;
-
+            cargaFabricas();
         }
     }
 }
