@@ -36,6 +36,7 @@ namespace WpfAppAgencia
             InitializeComponent();
             cargaCboFabrica();
             muestraBotones();
+            gridFabrica.IsEnabled = false;
         }
         private DataSet getData(string strSQL, string strDA)
         {
@@ -77,6 +78,7 @@ namespace WpfAppAgencia
         private void LimpForm()
         {
             txtFabrica.Text = string.Empty;
+            txtCodigo.Text = string.Empty;
         }
         private void CargaFabrica(int param)
         {
