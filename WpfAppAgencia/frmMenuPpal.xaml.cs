@@ -55,6 +55,12 @@ namespace WpfAppAgencia
             f.Owner = this;
             f.ShowDialog();
         }
+        private void MenuItem_Click_6(object sender, RoutedEventArgs e)
+        {
+            frmRegVehiculo f = new frmRegVehiculo();
+            f.Owner = this;
+            f.ShowDialog();
+        }
         private void button_Click(object sender, RoutedEventArgs e)
         {
             ProgressManager pm = new ProgressManager();

@@ -1,0 +1,26 @@
+﻿<Window x:Name="frmRegVehiculos" x:Class="WpfAppAgencia.frmRegVehiculo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppAgencia"
+        mc:Ignorable="d"
+        Title="Datos Vehiculo" Height="472.8" Width="921.6" FontWeight="Bold" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label x:Name="lblVehiculo" Content="Vehículo:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,31,0,0"/>
+        <ComboBox x:Name="cboVehiculo" HorizontalAlignment="Left" Height="26" Margin="97,31,0,0" VerticalAlignment="Top" Width="222"/>
+        <Grid x:Name="gridFabrica" HorizontalAlignment="Left" Height="124" Margin="31,77,0,0" VerticalAlignment="Top" Width="865" Background="#FFB7D2DE">
+            <Label x:Name="lblDescEstCivil" Content="Descripción *" HorizontalAlignment="Left" Height="27" Margin="43,59,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+            <TextBox x:Name="txtFabrica" HorizontalAlignment="Left" Height="27" Margin="137,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" CharacterCasing="Upper" FontWeight="Bold"/>
+            <Label x:Name="lblDominio" Content="Dominio" HorizontalAlignment="Left" Height="26" Margin="8,9,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtDominio" HorizontalAlignment="Left" Height="27" Margin="74,8,0,0" VerticalAlignment="Top" Width="71" CharacterCasing="Upper" FontWeight="Bold" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            <Label x:Name="lblMarca" Content="Marca" HorizontalAlignment="Left" Height="26" Margin="150,10,0,0" VerticalAlignment="Top" Width="48" HorizontalContentAlignment="Right"/>
+            <ComboBox x:Name="cboMarca" HorizontalAlignment="Left" Height="26" Margin="203,10,0,0" VerticalAlignment="Top" Width="178" SelectionChanged="cboMarca_SelectionChanged"/>
+            <Label x:Name="lblModelo" Content="Modelo" HorizontalAlignment="Left" Height="26" Margin="404,10,0,0" VerticalAlignment="Top" Width="56" HorizontalContentAlignment="Right"/>
+            <ComboBox x:Name="cboModelo" HorizontalAlignment="Left" Height="26" Margin="465,10,0,0" VerticalAlignment="Top" Width="178" SelectionChanged="cboModelo_SelectionChanged"/>
+            <Label x:Name="lblAnio" Content="Año" HorizontalAlignment="Left" Height="26" Margin="657,10,0,0" VerticalAlignment="Top" Width="42" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtAnio" HorizontalAlignment="Left" Height="27" Margin="703,9,0,0" VerticalAlignment="Top" Width="71" CharacterCasing="Upper" FontWeight="Bold" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+        </Grid>
+
+    </Grid>
+</Window>

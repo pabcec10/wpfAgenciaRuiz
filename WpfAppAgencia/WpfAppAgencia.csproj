@@ -76,6 +76,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="frmRegVehiculo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -98,6 +102,9 @@
     </Compile>
     <Compile Include="frmRegFabrica.xaml.cs">
       <DependentUpon>frmRegFabrica.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmRegVehiculo.xaml.cs">
+      <DependentUpon>frmRegVehiculo.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

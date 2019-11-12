@@ -18,6 +18,9 @@
                     <MenuItem Header="Marcas" Click="MenuItem_Click_4" />
                     <MenuItem Header="Fábricas" Click="MenuItem_Click_5" />
                 </MenuItem>
+                <MenuItem Header="Operaciones" >
+                    <MenuItem Header="Vehiculo" Click="MenuItem_Click_6" />
+                </MenuItem>
             </Menu>
         </DockPanel>
         <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Height="61" Margin="478,52,0,0" VerticalAlignment="Top" Width="163" Click="button_Click"/>
