@@ -244,5 +244,5 @@ ModelManifest.xml
 # FAKE - F# Make
 .fake/
 
-# Excluye Archivo de Configuracion
-App.*
+# Excluye App.config
+WpfAppAgencia/App.config

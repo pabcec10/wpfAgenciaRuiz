@@ -9,9 +9,9 @@
     <Grid>
         <Label x:Name="lblVehiculo" Content="Vehículo:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="31,31,0,0"/>
         <ComboBox x:Name="cboVehiculo" HorizontalAlignment="Left" Height="26" Margin="97,31,0,0" VerticalAlignment="Top" Width="222"/>
-        <Grid x:Name="gridFabrica" HorizontalAlignment="Left" Height="124" Margin="31,77,0,0" VerticalAlignment="Top" Width="865" Background="#FFB7D2DE">
-            <Label x:Name="lblDescEstCivil" Content="Descripción *" HorizontalAlignment="Left" Height="27" Margin="43,59,0,0" VerticalAlignment="Top" Width="90" HorizontalContentAlignment="Right" FontWeight="Bold"/>
-            <TextBox x:Name="txtFabrica" HorizontalAlignment="Left" Height="27" Margin="137,58,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="391" CharacterCasing="Upper" FontWeight="Bold"/>
+        <Grid x:Name="gridFabrica" HorizontalAlignment="Left" Height="274" Margin="20,84,0,0" VerticalAlignment="Top" Width="865" Background="#FFB7D2DE">
+            <Label x:Name="lblProcedencia" Content="Procedencia" HorizontalAlignment="Left" Height="27" Margin="10,58,0,0" VerticalAlignment="Top" Width="81" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+            <TextBox x:Name="txtCodAutomotor" HorizontalAlignment="Left" Height="27" Margin="697,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="141" CharacterCasing="Upper" FontWeight="Bold"/>
             <Label x:Name="lblDominio" Content="Dominio" HorizontalAlignment="Left" Height="26" Margin="8,9,0,0" VerticalAlignment="Top" Width="62" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
             <TextBox x:Name="txtDominio" HorizontalAlignment="Left" Height="27" Margin="74,8,0,0" VerticalAlignment="Top" Width="71" CharacterCasing="Upper" FontWeight="Bold" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
             <Label x:Name="lblMarca" Content="Marca" HorizontalAlignment="Left" Height="26" Margin="150,10,0,0" VerticalAlignment="Top" Width="48" HorizontalContentAlignment="Right"/>
@@ -19,7 +19,29 @@
             <Label x:Name="lblModelo" Content="Modelo" HorizontalAlignment="Left" Height="26" Margin="404,10,0,0" VerticalAlignment="Top" Width="56" HorizontalContentAlignment="Right"/>
             <ComboBox x:Name="cboModelo" HorizontalAlignment="Left" Height="26" Margin="465,10,0,0" VerticalAlignment="Top" Width="178" SelectionChanged="cboModelo_SelectionChanged"/>
             <Label x:Name="lblAnio" Content="Año" HorizontalAlignment="Left" Height="26" Margin="657,10,0,0" VerticalAlignment="Top" Width="42" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
-            <TextBox x:Name="txtAnio" HorizontalAlignment="Left" Height="27" Margin="703,9,0,0" VerticalAlignment="Top" Width="71" CharacterCasing="Upper" FontWeight="Bold" TextWrapping="Wrap" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtAnio" HorizontalAlignment="Left" Height="27" Margin="703,9,0,0" VerticalAlignment="Top" Width="44" CharacterCasing="Upper" FontWeight="Bold" TextWrapping="Wrap" VerticalContentAlignment="Center" MaxLength="4" Text="2019"/>
+            <ComboBox x:Name="cboProcedencia" HorizontalAlignment="Left" Height="26" Margin="91,59,0,0" VerticalAlignment="Top" Width="178" SelectionChanged="cboProcedencia_SelectionChanged"/>
+            <DatePicker x:Name="dateInscripcion" HorizontalAlignment="Left" Height="23" Margin="419,58,0,0" VerticalAlignment="Top" Width="124"/>
+            <Label x:Name="lblFecInsc" Content="Fec. Insc. Inicial" HorizontalAlignment="Left" Height="23" Margin="306,59,0,0" VerticalAlignment="Top" Width="108" HorizontalContentAlignment="Right"/>
+            <Label x:Name="lblCodAutomotor" Content="Cód. Automotor" HorizontalAlignment="Left" Height="26" Margin="570,59,0,0" VerticalAlignment="Top" Width="111" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtCodAutomotor_Copy" HorizontalAlignment="Left" Height="27" Margin="93,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" CharacterCasing="Upper" FontWeight="Bold"/>
+            <Label x:Name="lblMarcaMotor" Content="Mca. Motor" HorizontalAlignment="Left" Height="26" Margin="6,101,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtNroMotor" HorizontalAlignment="Left" Height="27" Margin="374,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" CharacterCasing="Upper" FontWeight="Bold"/>
+            <Label x:Name="lblNroMotor" Content="Nro. Motor" HorizontalAlignment="Left" Height="26" Margin="287,101,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtMarcaChasis" HorizontalAlignment="Left" Height="27" Margin="93,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" CharacterCasing="Upper" FontWeight="Bold"/>
+            <Label x:Name="lblMarcaChasis" Content="Mca. Chasis" HorizontalAlignment="Left" Height="26" Margin="6,141,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtNroChasis" HorizontalAlignment="Left" Height="27" Margin="374,141,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" CharacterCasing="Upper" FontWeight="Bold"/>
+            <Label x:Name="lblNroChasis" Content="Nro. Chasis" HorizontalAlignment="Left" Height="26" Margin="287,141,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
+            <DatePicker x:Name="dateAdquisicion" HorizontalAlignment="Left" Height="27" Margin="141,182,0,0" VerticalAlignment="Top" Width="124"/>
+            <Label x:Name="lblFecAdq" Content="Fec. Adquisición" HorizontalAlignment="Left" Height="27" Margin="28,182,0,0" VerticalAlignment="Top" Width="108" HorizontalContentAlignment="Right"/>
+            <TextBox x:Name="txtCarroceria" HorizontalAlignment="Left" Height="27" Margin="376,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="176" FontWeight="Bold"/>
+            <Label x:Name="lblCarroceria" Content="Carroceria" HorizontalAlignment="Left" Height="26" Margin="289,181,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
+            <TextBox x:Name="txtCondicion" HorizontalAlignment="Left" Height="27" Margin="657,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="169" FontWeight="Bold"/>
+            <Label x:Name="lblCondicion" Content="Condición" HorizontalAlignment="Left" Height="26" Margin="570,181,0,0" VerticalAlignment="Top" Width="80" HorizontalContentAlignment="Right" FontWeight="Bold" VerticalContentAlignment="Center"/>
+            <Label x:Name="lblUso" Content="Uso" HorizontalAlignment="Left" Height="27" Margin="38,222,0,0" VerticalAlignment="Top" Width="50" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+            <ComboBox x:Name="cboUso" HorizontalAlignment="Left" Height="26" Margin="93,223,0,0" VerticalAlignment="Top" Width="178" SelectionChanged="cboUso_SelectionChanged"/>
+            <Label x:Name="lblTipo" Content="Tipo" HorizontalAlignment="Left" Height="27" Margin="631,101,0,0" VerticalAlignment="Top" Width="50" HorizontalContentAlignment="Right" FontWeight="Bold"/>
+            <ComboBox x:Name="cboTipo" HorizontalAlignment="Left" Height="26" Margin="697,102,0,0" VerticalAlignment="Top" Width="141" SelectionChanged="cboTipo_SelectionChanged"/>
         </Grid>
 
     </Grid>

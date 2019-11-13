@@ -31,12 +31,18 @@ namespace WpfAppAgencia
     {
         int IdMod = 0;
         int IdMarc = 0;
+        int IdProc = 0;
+        int IdUso = 0;
+        int xIdTipo = 0;
 
         public frmRegVehiculo()
         {
             InitializeComponent();
             cargaCboMarca();
             cargaCboModelo(0);
+            cargaCboProcedencia();
+            cargaCboUso();
+            cargaCboTipo();
         }
         private DataSet getData(string strSQL, string strDA)
         {
@@ -82,6 +88,59 @@ namespace WpfAppAgencia
             {
                 IdMod = Convert.ToInt32(((DataRowView)cboModelo.SelectedItem)["IdModelo"]);
                 txtAnio.Focus();
+            }
+        }
+        private void cargaCboProcedencia()
+        {
+            cboProcedencia.ItemsSource = null;
+            DataSet ds = getData("Select * From Procedencia  Order By Procedencia", "Procedencia");
+            DataTable dt = ds.Tables[0];
+            cboProcedencia.ItemsSource = ((IListSource)dt).GetList();
+            cboProcedencia.DisplayMemberPath = "Procedencia";
+            cboProcedencia.SelectedValue = "IdProcedencia";
+        }
+        private void cargaCboUso()
+        {
+            cboUso.ItemsSource = null;
+            DataSet ds = getData("Select * From AutoUso  Order By Uso", "AutoUso");
+            DataTable dt = ds.Tables[0];
+            cboUso.ItemsSource = ((IListSource)dt).GetList();
+            cboUso.DisplayMemberPath = "Uso";
+            cboUso.SelectedValue = "IdUso";
+        }
+        private void cargaCboTipo()
+        {
+            cboTipo.ItemsSource = null;
+            DataSet ds = getData("Select * From TipoAutomotores  Order By TipoAutomotor", "TipoAutomotores");
+            DataTable dt = ds.Tables[0];
+            cboTipo.ItemsSource = ((IListSource)dt).GetList();
+            cboTipo.DisplayMemberPath = "TipoAutomotor";
+            cboTipo.SelectedValue = "IdTipoAutomotor";
+        }
+        private void cboProcedencia_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cboProcedencia.SelectedItem != null)
+            {
+                IdProc = Convert.ToInt32(((DataRowView)cboProcedencia.SelectedItem)["IdProcedencia"]);
+                
+            }
+        }
+
+        private void cboUso_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cboUso.SelectedItem != null)
+            {
+                IdUso = Convert.ToInt32(((DataRowView)cboUso.SelectedItem)["IdUso"]);
+
+            }
+        }
+
+        private void cboTipo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (cboTipo.SelectedItem != null)
+            {
+                xIdTipo = Convert.ToInt32(((DataRowView)cboTipo.SelectedItem)["IdTipo"]);
+
             }
         }
     }
